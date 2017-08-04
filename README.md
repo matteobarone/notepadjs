@@ -1,2 +1,3 @@
-# notepadjs
+# Notepadjs
+
 Exercise in Angular
