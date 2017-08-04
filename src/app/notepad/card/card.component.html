@@ -1,1 +1,12 @@
-<input>
+<input
+  placeholder="Type something"
+  [(ngModel)]="currentNote"
+  (keypress)="enter($event)"
+  name="currentNote"
+>
+<p *ngFor="let note of notes">{{note}}</p>
+<p
+  *ngIf="notes.length > 0"
+  class="card__btn-clear"
+  (click)="clear()"
+>Clear</p>

@@ -1,19 +1,43 @@
+@import "./../../../styles.variables";
+
 :host {
   display: block;
+  position: relative;
+  overflow: scroll;
   width: 300px;
   height: 500px;
-  background-color: #fff;
+  padding: 10px;
+  background-color: $light-grey;
   box-shadow: 0px 30px 80px 0px rgba(0, 0, 0, 0.6);
   border-radius: 3px;
   @media (max-width: 480px) {
     width: 100vw;
     height: 100vh;
+    border-radius: 0px;
   }
 }
 
 input {
   border: none;
+  border-bottom: 1px solid #ccc;
   width: 100%;
-  padding: 20px 10px;
+  padding: 10px 0 20px 0;
   color: #333;
+  background-color: $light-grey;
+  &:focus {
+    outline: none;
+  }
+}
+
+p {
+  padding: 10px 0;
+}
+
+.card__btn-clear {
+  position: absolute;
+  bottom: 0;
+  width: calc(100% - 20px);
+  font-size: 12px;
+  border-top: 1px solid #ccc;
+  text-align: center;
 }
