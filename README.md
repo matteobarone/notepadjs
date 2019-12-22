@@ -1,3 +1,0 @@
-# Notepadjs
-
-Exercise in Angular
