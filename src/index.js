@@ -27,6 +27,10 @@ function addItem(text, list) {
 // - init app: get dal local storage dell'array notes (se esiste),
 //   altrimenti settare array vuoto per le nostre notes nella variabile "notesStore"
 // - popolare la variabile "notesStore" con il nuovo dato inserito (notesStore.push(text))
+function getItem(text, list){
+  localStorage.get('notes'. JSON.stringify([text]));
+  console.log('ho preso', text);
+}
 
 // Step get
 // - popolare la lista delle note con le eventuali note del local storage
