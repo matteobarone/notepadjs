@@ -28,8 +28,8 @@ function addItem(text, list) {
 //   altrimenti settare array vuoto per le nostre notes nella variabile "notesStore"
 // - popolare la variabile "notesStore" con il nuovo dato inserito (notesStore.push(text))
 function getItem(text, list){
-  localStorage.get('notes'. JSON.stringify([text]));
-  console.log('ho preso', text);
+  localStorage.get('notes');
+  console.log('ho preso');
 }
 
 // Step get
