@@ -22,6 +22,8 @@ function addItem(text, list) {
   localStorage.set('notes', JSON.stringify([text]));
   console.log('ho aggiunto', text);
 }
+/*20/01/2020 - Manuel: ho notato che il local storage memorizza solo l'ultima stringa inserita,
+non tutte come fa il notepad da cui abbiamo preso spunto. Forse c'è un errore.*/
 
 // Step per finire il set
 // - init app: get dal local storage dell'array notes (se esiste),
