@@ -25,14 +25,3 @@ function addItem(text, list) {
   console.log('ho aggiunto', text);
   storeItems.push(text);
 }
-
-/* 1. Step per finire il set
-- init app: get dal local storage dell'array notes (se esiste),
-altrimenti settare array vuoto per le nostre notes nella variabile "notesStore"
-- popolare la variabile "notesStore" con il nuovo dato inserito (notesStore.push(text))
-2. Step get
-- popolare la lista delle note con le eventuali note del local storage*/
-
-/*Nota Manuel: ho provato a scrivere il codice sotto, ma in realtà non succede nulla,
-quando però lo faccio da console su Chrome funziona. Magari vediamo insieme stasera*/
-
