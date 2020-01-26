@@ -1,5 +1,7 @@
 import {localStorage} from './local-storage/local-storage';
 
+const storeItems = [];  
+
 document.addEventListener('DOMContentLoaded', () => {
   const listItemElement = document.querySelector('.notepad__list');
   const inputElement = document.querySelector('.notepad__input');
@@ -12,7 +14,8 @@ document.addEventListener('DOMContentLoaded', () => {
   })
 });
 
-function addItem(text, list) {
+function addItem(text, list, storeItems) {
+  
   const el = document.createElement('li');
   const textNode = document.createTextNode(text);
   el.appendChild(textNode);
@@ -20,10 +23,10 @@ function addItem(text, list) {
   list.appendChild(el);
 
   // retrieve the notes that are already in localstorage
-  const notes = JSON.parse(localStorage.get('notes'));
-  // pushing your new note into the notes array - mutation
-  notes.push(text);
+  const notes = JSON.parse(localStorage.getItem('notes'));  
   // setting the notes array JSON into localStorage
-  localStorage.set('notes', JSON.stringify(notes));
+  notes.push(text);  
+  // pushing your new note into the notes array - mutation
+  localStorage.setItem('notes', JSON.stringify(text));  
 
 }
