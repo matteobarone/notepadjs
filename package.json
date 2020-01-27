@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack & npm run server",
-    "server": "live-server --host=localhost"
+    "server": "live-server --host=localhost",
+    "build": "webpack-dev-server"
   },
   "repository": {
     "type": "git",
@@ -18,11 +19,12 @@
   },
   "homepage": "https://github.com/matteobarone/notepadjs#readme",
   "devDependencies": {
-    "@babel/core": "^7.7.7",
-    "@babel/preset-env": "^7.7.7",
+    "@babel/core": "^7.8.3",
+    "@babel/preset-env": "^7.8.3",
     "babel-loader": "^8.0.6",
     "live-server": "^1.2.1",
-    "webpack": "^4.41.4",
-    "webpack-cli": "^3.3.10"
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.10.1"
   }
 }
