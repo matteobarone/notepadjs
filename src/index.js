@@ -19,8 +19,7 @@ function addItem(text, list, storeItems) {
   el.appendChild(textNode);
   el.classList.add('notepad__item');
   list.appendChild(el);
-  
-  /*
+
   // retrieve the notes that are already in localstorage
   const notes = JSON.parse(localStorage.getItem('notes'));
   // pushing your new note into the notes array - mutation
@@ -29,10 +28,9 @@ function addItem(text, list, storeItems) {
   localStorage.setItem('notes', JSON.stringify(text));   
   
   console.log('ho aggiunto', text);
-  */
-
+  
   // remove item
-  localStorage.removeItem('notes');
+  localStorage.remove('notes');
 
 }
 
