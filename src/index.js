@@ -1,6 +1,7 @@
 import { localStorage } from './local-storage/local-storage';
 
 document.addEventListener('DOMContentLoaded', () => {
+  console.log(Object.entries(window.localStorage));
   const listItemElement = document.querySelector('.notepad__list');
   const inputElement = document.querySelector('.notepad__input');
 
@@ -9,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
       addItem(event.target.value, listItemElement);
       event.target.value = null;
     }
-  })
+  });
 });
 
 function addItem(text, list) {
@@ -20,24 +21,30 @@ function addItem(text, list) {
   el.classList.add('notepad__item');
   list.appendChild(el);
   
-  // setting the notes array JSON into localStorage
-  localStorage.set('notes', JSON.stringify(text));
   
+  localStorage.set('notes-' + Date.now(), JSON.stringify(text));
+  console.log(Date.now());
   console.log('ho aggiunto', text);
-  // retrieve the notes that are already in localstorage
-  const notes = JSON.parse(localStorage.getItem('notes'));
-  //pushing your new note into the notes array - mutation
-  notes.push(text);
+  
+  //const notes = JSON.parse(localStorage.get('notes'));  
 
 }
 
-// Ho provato con questo per fare il remove Item ma non funziona
-function remove(text, list){
-  const removeElement = document.querySelector('.notepad__item::after');
-  removeElement.addEventListener('onclick', ()=>{
-    JSON.stringify(localStorage.remove(text));
-  });
-}
+const removeItems = document.querySelector('notepad__clear');
+
+/*removeItems.addEventListener('onclick', (text, list) => {
+
+  const el = document.createElement('li');
+  const textNode = document.createTextNode(text);
+  el.removeChild(textNode);
+  el.classList.remove('notepad__item');
+  list.removeChild(el);
+
+  const removeNotes = JSON.parse(localStorage.remove('notes'));
+  //removeNotes.pop(text);
+  console.log('ho rimosso', text);
+
+});*/
 
 
 
