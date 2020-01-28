@@ -12,26 +12,30 @@ document.addEventListener('DOMContentLoaded', () => {
   })
 });
 
-function addItem(text, list, storeItems) {
+function addItem(text, list) {
   
   const el = document.createElement('li');
   const textNode = document.createTextNode(text);
   el.appendChild(textNode);
-  el.classList.add('notepad__item');
+  el.classList.add('.notepad__item');
   list.appendChild(el);
 
   // retrieve the notes that are already in localstorage
-  const notes = JSON.parse(localStorage.getItem('notes'));
+  const notes = JSON.parse(localStorage.get('notes'));
   // pushing your new note into the notes array - mutation
-  notes.push(text);  
+  notes.push(text);
   // setting the notes array JSON into localStorage
-  localStorage.setItem('notes', JSON.stringify(text));   
+  localStorage.set('notes', JSON.stringify(text));   
   
   console.log('ho aggiunto', text);
-  
-  // remove item
-  localStorage.remove('notes');
 
+}
+
+function removeItem(text, list){
+  const removeElement = document.querySelector('.notepad__item::after');
+  removeElement.addEventListener('onclick', ()=>{
+    localStorage.remove('notes');
+  });
 }
 
 
