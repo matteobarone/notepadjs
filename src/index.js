@@ -54,6 +54,10 @@ function addItemToDom(text, list, noteId) {
   // la funzione del listener dovrà fare due cose:
   // - eliminare dal DOM l'elemento
   // - eliminare dal local storage la nota con l'ID specifico
+  el.addEventListener('click', () => {
+    removeItemFromDom(noteId);
+    localStorage.remove(noteId);
+  });
 }
 
 // rimozione singolo item dal DOM tramite la sua chiave
