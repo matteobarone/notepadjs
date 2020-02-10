@@ -49,6 +49,11 @@ function addItemToDom(text, list, noteId) {
   el.appendChild(textNode);
   el.classList.add('notepad__item');
   list.appendChild(el);
+
+  // TODO: aggiungere listener che al click dell'elemento elimini l'elemento stesso dalla lista
+  // la funzione del listener dovrà fare due cose:
+  // - eliminare dal DOM l'elemento
+  // - eliminare dal local storage la nota con l'ID specifico
 }
 
 // rimozione singolo item dal DOM tramite la sua chiave
